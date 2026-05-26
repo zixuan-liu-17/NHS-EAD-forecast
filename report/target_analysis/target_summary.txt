@@ -1,0 +1,28 @@
+Target variable summary
+=======================
+
+n_days: 930
+start_date: 2023-03-16
+end_date: 2025-09-30
+mean: 0.670105
+variance: 0.121748
+std: 0.348924
+dispersion_index: 0.181685
+fractional_share: 1.000000
+zero_rate_observed: 0.000000
+zero_rate_poisson: 0.511655
+max: 2.203913
+p95: 1.323874
+p99: 1.823096
+monthly_mean_average: 0.674050
+monthly_variance_average: 0.071845
+monthly_dispersion_average: 0.101631
+nb_size: None
+nb_probability: None
+zero_rate_negative_binomial: None
+
+Interpretation hints
+--------------------
+Variance is below the mean, so the series is under-dispersed relative to Poisson.
+Observed zero frequency is below Poisson expectation, suggesting the mass is shifted toward positive counts.
+The target is mostly fractional rather than integer-valued, so Poisson or Negative Binomial models should be treated as quasi-likelihood approximations rather than literal count models.

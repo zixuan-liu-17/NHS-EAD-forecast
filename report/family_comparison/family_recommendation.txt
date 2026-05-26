@@ -1,0 +1,7 @@
+Best D-3 compliant family by ranking: Poisson.
+Best MSE_1_5: 0.072407.
+Best MSE_6_10: 0.073919.
+Selected Tweedie power: 1.10.
+The target is fractional throughout, so Poisson, Gamma, and Tweedie should be interpreted as positive-mean modeling choices rather than literal count likelihoods.
+The target is under-dispersed relative to Poisson, which weakens a plain Poisson story.
+Recommendation: Poisson only makes sense here as a log-link mean model, not as a literal count-data assumption.
