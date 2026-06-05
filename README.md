@@ -1,15 +1,23 @@
-# SPHERE-PPL Forecasting Contest - NHS Acute Patient Harm Forecasting
+# Forecast Report Runner
 
+This branch contains only the files needed to run `report/forecast_report.ipynb`.
 
-## Introduction
+## Contents
 
-This competition focuses on forecasting severe patient harm resulting from delays in admitting patients from the Emergency Department (ED). Delays occur when a patient has been deemed to require hospital admission but no beds are immediately available.
+- `report/forecast_report.ipynb` - method report and rolling forecast notebook
+- `outputs/cache/daily_metric_coverage_panel.parquet` - daily input panel used by the notebook
+- `src/clean_candidate_variables.py` - minimal panel loader
+- `src/cv_yoy_eval.py` - minimal model factory
+- `requirements.txt` - Python package dependencies
 
-Recent research in the Bristol NHS healthcare system has shown that every four hours of ED admission delay is associated with an 8% increase in the odds of 30-day mortality (Howlett et al., 2026). Applied to recent data, this equates to an estimated 25 deaths per month that could be considered avoidable if there were no ED admission delays.
+## Run
 
-The aim of the competition is to develop an algorithm capable of predicting the number of avoidable deaths over the next ten days using near-real-time data. The winning model is intended for daily implementation in the Bristol NHS, providing managers with advance warning to enable pre-emptive action.
+From the repository root:
 
-All data used in this project are drawn from real-world hospital records.
+```bash
+python -m pip install -r requirements.txt
+jupyter notebook report/forecast_report.ipynb
+```
 
 
 ## Data
@@ -19,6 +27,8 @@ All data used in this project are drawn from real-world hospital records.
 The target outcome is daily estimated avoidable deaths, pre-calculated from ED admission delays and patient attributes across the Bristol NHS healthcare system, with no missing data.
 
 The 220 candidate explanatory variables vary in time frequency of recording, from every day to every 15 minutes. Some have records for every time-point within the 16 March 2023 to 30 September 2025 period whilst others have only partial recordings and missing data-points. 
+
+For any winning model to be integrated into NHS systems and deployed operationally, it must be developed using only the data provided. Therefore integrating external datasets is not allowed as part of this contest. 
 
 A glossary and data summary are provided in the Appendix.
 

@@ -1,4 +1,6 @@
-.DS_Store
 __pycache__/
-*.pyc
-data/~$*.xlsx
+.ipynb_checkpoints/
+.venv/
+.cache/
+.DS_Store
+submission/
